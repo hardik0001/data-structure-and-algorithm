@@ -15,21 +15,21 @@ int main(){
         int l,r;
         l=0;
         r=n-1;
-        int sum;
+        int sum=0
         while(l<r)
         { 
             
-            
-            if(arr[i]+arr[l]+ arr[r]==target)
+            sum=arr[i]+arr[l]+ arr[r];
+            if(sum==target)
             {
                 cout<<arr[i]<<" "<<arr[l]<<" and "<<arr[r]<<endl;
                 l++;
                 r--;
             } 
-            else if(arr[i]+arr[l]+ arr[r]<target){
+            else if(sum<target){
                 l++;
             }
-            else{
+            else if(sum>target){
                 r++;
               }
             
