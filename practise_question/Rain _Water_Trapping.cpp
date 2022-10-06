@@ -1,17 +1,13 @@
 #include<bits/stdc++.h>
 using namespace std;
 void gap(int arr[],int n){
-    int max=0;
-    for(int i=0;i<n;i++){
-        if(arr[i]>=max){
-            max=arr[i];
-            break;
-        }
-        else if(arr[i]<=max){{
-            max=max+arr[i];
-        }
-        cout<<max<<endl;
+    int max=0,sun=0;
 
+    for(int i=0;i<n;i++){
+        for(int j=i+2;j<=n;j++){
+            if(arr[i]>arr[j]){
+                sum+=(arr[i]-arr[j]);
+            }
         }
     }
     
