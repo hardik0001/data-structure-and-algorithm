@@ -10,10 +10,12 @@ void inputstring(char* chaarr, char delimiter){
         i++;
         ch=cin.get();
     }
+    chaarr[i]='/0';
+    return; 
 
 }
 int main{
-    //
+    //cin.getline(ch,0,delimiter)
     //int n,m;
     //cin>>n>>m;
     char ch[100];
