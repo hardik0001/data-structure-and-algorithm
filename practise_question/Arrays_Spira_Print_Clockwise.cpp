@@ -14,23 +14,23 @@ int main(){
     int sr=0,er=row-1,sc=0,ec=col-1;
     while(sr<=er && sc<=ec){
        
-       for(int i=sr;i<=er;i++){ 
-        cout<<arr[i][sc]<<", ";
+       for(int i=sc;i<=ec;i++){ 
+        cout<<arr[sr][i]<<", ";
         }
-        sc++;
-        for(int i=sc;i<=ec;i++){
-        cout<<arr[er][i]<<", ";
-        }
-        er--;
-        for(int i=er;i>=sr;i--){
+        sr++;
+        for(int i=sr;i<=er;i++){
         cout<<arr[i][ec]<<", ";
         }
         ec--;
         for(int i=ec;i>=sc;i--){
-        cout<<arr[sr][i]<<", ";
+        cout<<arr[er][i]<<", ";
+        }
+        er--;
+        for(int i=er;i>=sr;i--){
+        cout<<arr[i][sc]<<", ";
         }
         //cout<<endl;
-        sr++;
+        sc++;
         
    }
     cout<<"END";
