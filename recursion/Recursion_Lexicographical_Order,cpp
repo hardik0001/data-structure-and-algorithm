@@ -1,0 +1,23 @@
+#include<bits/stdc++.h>
+using namespace std;
+void lexi(int n){
+    vector<string>arr;
+    for(int i=0;i<n;i++){
+        arr.push_back(to_string(arr[i]));
+
+    }
+    sort(arr.begin(),arr.end());
+    vector<int>ans;
+    for(int i=0;i<n;i++){
+        ans.push_back(stoi(arr[i]));
+    }
+    for(int i=0;i<n;i++){
+        cout<<ans[i];
+    }
+
+}
+int main(){
+    int n;
+    cin>>n;
+    lexi(n);
+}
