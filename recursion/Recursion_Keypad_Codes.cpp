@@ -24,5 +24,5 @@ int main(){
     cout<<endl;
 	cout<<cnt<<endl;
     
-}
+}6
     
