@@ -16,13 +16,13 @@ void insertFromEnd(Node* &head,Node* &tail,int data){
     if(head==NULL && tail==NULL){
         Node* n=new Node(data);
         head =n;
-        tail =NULL;
+        tail =n;
     }
     else{
         Node* n=new Node(data);
         tail->next=n;
         tail=tail->next;
-    }
+       }
 }
 void print(Node* &t){
     while(t){
@@ -34,10 +34,10 @@ void print(Node* &t){
 int main(){
     Node* head = NULL;
     Node* tail = NULL;
-    insertFromEnd(head,tail,1);
-	/*insertFromEnd(head,tail,2);
+    insertFromEnd(head,tail,10);
+	insertFromEnd(head,tail,2);
 	insertFromEnd(head,tail,3);
-	insertFromEnd(head,tail,4);*/
+	insertFromEnd(head,tail,4);
     
     print(head);
     cout<<endl;
