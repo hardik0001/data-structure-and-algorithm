@@ -50,8 +50,6 @@ void  insertFromPos(Node* &head , Node* &tail , int pos , int data){
     }
     Node* a=temp;
     Node* b=temp->next;
-
-
     a->next=n;
     b->next=b;
 
