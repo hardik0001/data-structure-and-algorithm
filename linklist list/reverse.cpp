@@ -23,29 +23,22 @@ class Node{
 };
 
 
-//deletionformpos
-void deletionformpos(Node* &head,int pos){
-    if(pos==1){
-        Node* first=head;
-        head=head->next;
-        first->next=NULL;
-        delete first;
+//rev
+Node* rev(Node* &head,Node* &prev){
+    if(head==NULL && head->next==NULL){
+        return head;
+    }
+    
+    Node* curr=head;
+    Node* forward=NULL;
+    while(curr!=NULL){
+        forward=curr->next;
+        curr->next=prev;
+        prev=curr;
+        curr=forward;
 
     }
-    else{
-        Node* curr=head;
-        Node* prev =NULL;
-        int cnt=1;
-        while(cnt<pos){
-            prev=curr;
-            curr=curr->next;
-            cnt++;
-        }
-        prev->next =curr->next;
-        curr->next=NULL;
-        delete curr;
-    }
-
+    return prev;
 }
 
 
@@ -72,20 +65,21 @@ Node* create(){
 }
 void print(Node* t){
     while(t!=NULL){
-        cout<<t->val<<"->";+
+        cout<<t->val<<"->";
         t=t->next;
     }
     return;
 }
 int main(){
     Node* head=create();
+    Node* prev=NULL;
     Node* tail=NULL;
     print(head);
+    cout<<"null";
     cout<<endl;
-    deletionformpos(head,6);
-    //insertFromPos(head,tail,1,10);
+    rev(head,prev);
     
-    print(head);
-    //cout<<(head==NULL?"null":"something is there")<<endl;
+    print(prev);
+    cout<<"null"<<endl;
 
 }
