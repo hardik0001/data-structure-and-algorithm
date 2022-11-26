@@ -16,21 +16,42 @@ public:
 // head - Head pointer of the Linked List
 // Return a boolean value indicating the presence of cycle
 // If the cycle is present, modify the linked list to remove the cycle as well
+
+
+
+
+
+
+
 bool floydCycleRemoval(Node *head)
 {
     /* Code here */
+    if(head==NULL){
+        return false;
+    }
+    Node* fast=head;
+    Node* slow=head;
+    while( fast!=NULL && fast->next!=NULL ){
+        fast=fast->next->next;
+        slow=slow->next;
+        if(fast==slow){
+            fast=head;
+            while(slow->next!=fast->next){
+                fast=fast->next;
+                slow=slow->next;
+            }
+            slow->next=NULL;
+            return true;
+
+        }
+    }
+    return false;
 }
 
 /*
-*
-*
-*   You do not need to refer or modify any code below this. 
-*   Only modify the above function definition.
-*	Any modications to code below could lead to a 'Wrong Answer' verdict despite above code being correct.
-*	You do not even need to read or know about the code below.
-*
-*
-*
+   ---------------------------------------------------------------------------------------------------
+
+
 */
 
 void buildCycleList(Node *&head)
@@ -62,6 +83,8 @@ void buildCycleList(Node *&head)
         hash[x] = n;
     }
     current->next = NULL;
+    
+    
 }
 
 void printLinkedList(Node *head)
@@ -70,7 +93,7 @@ void printLinkedList(Node *head)
     while (head != NULL)
     {
         if (s.find(head->data) != s.end())
-        {
+        {    
             cout << "\nCycle detected at " << head->data;
             return;
         }
@@ -78,6 +101,7 @@ void printLinkedList(Node *head)
         s.insert(head->data);
         head = head->next;
     }
+    
 }
 
 int main()
@@ -90,6 +114,8 @@ int main()
     if (cyclePresent)
     {
         cout << "Cycle was present\n";
+        //removeloop(head);
+        
     }
     else
     {
