@@ -23,8 +23,7 @@ class Solution{
       if(count>0){
       return count;
       }
-     
-          return -1;
+      return -1;
       
     }
 };
